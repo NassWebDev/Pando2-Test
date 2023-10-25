@@ -8,11 +8,11 @@ function CsvData( {csvData, headers, loading} ) {
                 loading && csvData.length === 0 ? 
                     <Spinner />
                 :
-                    <table>
+                    <table style={{border: '1px solid white'}}>
                         <thead>
                             <tr>
                             {headers.map((header, index) => (
-                                <th key={index}>{header}</th>
+                                <th style={{border: '1px solid white', padding: '5px'}} key={index}>{header}</th>
                             ))}
                             </tr>
                         </thead>
@@ -20,7 +20,7 @@ function CsvData( {csvData, headers, loading} ) {
                             {csvData.map((row, rowIndex) => (
                             <tr key={rowIndex}>
                                 {headers.map((header, index) => (
-                                <td key={index}>{row[header]}</td>
+                                <td style={{border: '1px solid white', padding: '5px', textAlign: 'center'}} key={index}>{row[header]}</td>
                                 ))}
                             </tr>
                             ))}
